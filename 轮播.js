@@ -1,5 +1,5 @@
 # icecreamly
-js轮播图
+//js轮播图
 function byId(id){
 	return typeof(id) === "string"? document.getElementById(id):id;
 }
