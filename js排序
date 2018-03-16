@@ -1,0 +1,45 @@
+# icecreamly
+//JavaScript
+//冒泡排序（相邻比大小） 算法复杂度O(n²)
+<script type="text/javascript">
+	function bubbleSort(arr){
+    //嵌套循环
+		for(let i=arr.length;i>0;i--){
+			for(let j=0;j<i-1;j++){
+				if(arr[j]>arr[j+1]){
+				temp = arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+		}
+	}
+	return arr;
+	}
+	var data=[5,32,54,6,9,43,50,22,34,8];
+	console.log(bubbleSort(data));
+</script>
+
+
+//快速排序  复杂度O(nlogn)
+<script type="text/javascript">
+	function quickSort(arr){
+  //判断数组是否为空，防止回调地狱
+  if(arr.length == 0) {
+     return [];
+    }
+  //选基准数判断其他数
+		var left = [];
+		var right = [];
+		var pivot = arr[0];
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]<pivot){
+				left.push(arr[i]);
+			}else{
+				right.push(arr[i]);
+			}
+		}
+		return quickSort(left).concat(pivot,quickSort(right));   //回调判断左右数组数据并合并数组
+	}
+  var data=[5,32,54,6,9,43,50,22,34,8];
+	console.log(quickSort(data));
+</script>
